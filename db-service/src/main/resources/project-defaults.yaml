@@ -1,0 +1,21 @@
+swarm:
+  datasources:
+    data-sources:
+      oracle-ds:
+        driver-name: oracle-driver
+        connection-url: jdbc:oracle:thin:@ldap://oraldap.hama.de:389/lfs,cn=OracleContext,dc=hama,dc=de ldap://oraldap2.hama.de:389/lfs,cn=OracleContext,dc=hama,dc=de
+      lfsprj:
+        driver-name: oracle-driver
+        connection-url: jdbc:oracle:thin:@ldap://oraldap.hama.de:389/lfsprj,cn=OracleContext,dc=hama,dc=de ldap://oraldap2.hama.de:389/lfsprj,cn=OracleContext,dc=hama,dc=de
+        allow-multiple-users: true
+        min-pool-size: 5
+        max-pool-size: 10
+        initial-pool-size: 5
+        pool-prefill: true
+    jdbc-drivers:
+      oracle-driver:
+        driver-class-name: oracle.jdbc.OracleDriver
+        driver-module-name: oracle.jdbc
+de:
+  hama:
+    db: lfsprj
